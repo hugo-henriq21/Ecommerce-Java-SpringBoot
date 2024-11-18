@@ -6,10 +6,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-import java.util.Date;
-
 @Entity
-public class Cliente {
+public class Produto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,11 +16,8 @@ public class Cliente {
     @Column(nullable = false, length = 255)
     private String nome;
 
-    @Column(nullable = false, unique = true, length = 14)
-    private String cpf;
-
-    @Column(name = "data_nascimento", nullable = false)
-    private Date dataNascimento;
+    @Column(columnDefinition = "TEXT")
+    private String descricao;
 
     // Getters e Setters
     public Long getId() {
@@ -41,19 +36,11 @@ public class Cliente {
         this.nome = nome;
     }
 
-    public String getCpf() {
-        return cpf;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
-
-    public Date getDataNascimento() {
-        return dataNascimento;
-    }
-
-    public void setDataNascimento(Date dataNascimento) {
-        this.dataNascimento = dataNascimento;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 }
