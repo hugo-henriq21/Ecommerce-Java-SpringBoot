@@ -19,7 +19,7 @@ public class Compra {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "cliente_id", nullable = false)
+    @JoinColumn(name = "cliente_id", nullable = false) //@JoinColumn(name = "cliente_id"): Define o nome da coluna que será usada como chave estrangeira na tabela Compra
     private Cliente cliente;
 
     @Column(nullable = false)
